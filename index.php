@@ -39,7 +39,7 @@ function capitaine_assets1() {
 }
 add_action( 'wp_enqueue_scripts', 'capitaine_assets1' );
 
-//---------- alert connexion fournisseur- --------------
+//---------- alert connexion fournisseur dt --------------
 
 add_action( 'wp_ajax_load_comments1', 'capitaine_load_comments1' );
 add_action( 'wp_ajax_nopriv_load_comments1', 'capitaine_load_comments1' );

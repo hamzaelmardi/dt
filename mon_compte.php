@@ -10,11 +10,34 @@ function dtmon_compte_shortcode() {
   $nom = $user->data->display_name;
   $email = $user->data->user_email;
 
- return $var = '
+  $dbstr ="(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST =127.0.0.1)(PORT = 1521))
+            (CONNECT_DATA =
+            (SERVER = DEDICATED)
+            (SERVICE_NAME = orcl)
+            (INSTANCE_NAME = orcl)))";
+    $conn = oci_connect('c##hamza','123',$dbstr);
+    $stmt = oci_parse($conn, "select TEL from FOURNISSEUR where EMAIL ='$email'");
+    $stmt1 = oci_parse($conn, "select CODE from FOURNISSEUR where EMAIL ='$email'");
+     oci_execute($stmt);
+     oci_execute($stmt1);
+    $nrows = oci_fetch_all($stmt, $results);
+    $nrows1 = oci_fetch_all($stmt1, $results1);
+ 
+ $var = '
  <head>
  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></script>
+ <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/3.6.95/css/materialdesignicons.css"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
  </head>
  <style>
+  .imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+}
+
 input[type=password] {
   width: 100%;
   padding: 12px 20px;
@@ -89,35 +112,13 @@ input[type=password] {
 .containermo {
   padding: 40px;
 }
-  .container {
-  border-radius: 5px;
-  background-color:white;
-  padding: 20px;
-}
+
 ::placeholder {
   color: grey;
 }
-.container { box-shadow: 0 0 3px black; margin: 10px }
-.container1 {
-  border-radius: 5px;
-  background-color:white;
-  padding: 40px;
-  
-}
-#iv{
-    margin: 0 auto;
-    width:42% 
-}
- .imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-}
-img.avatar {
-  margin-top: -20px;
-margin-bottom: -27px;
-  width: 30%;
-  border-radius: 50%;
-}
+
+
+
 .button {
 border-radius: 4px 4px 4px 4px;
   border: none;
@@ -143,40 +144,225 @@ border-radius: 4px 4px 4px 4px;
   border: 2px solid #c20c1d;
   
 }
-#myHeader {
-  background-color: white;
-  color: #63991b;
-  font-size: 15px
-}
-#a {
-  background-color: white;
-  color: black;
-  font-size: 25px
-}
+
 #label {
  color: #d93025; font-size: 14px;align-items: flex-start;display:none;margin-top: -6px
 }
 .title {color: #30404b; }
 #label {color: #d93025; font-size: 14px;align-items: flex-start;display:none;margin-top: -6px}
 input { box-shadow: 0 0 3px black; margin: 10px }
+body {
+    background-color: #f9f9fa
+}
+
+.col-xl {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.padding {
+    padding: 3rem !important
+}
+
+.user-card-full {
+    overflow: hidden
+}
+
+.card {
+    border-radius: 5px;
+    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+    border: none;
+    margin-bottom: 30px
+}
+
+.m-r-0 {
+    margin-right: 0px
+}
+
+.m-l-0 {
+    margin-left: 0px
+}
+
+.user-card-full .user-profile {
+    border-radius: 5px 0 0 5px
+}
+
+.bg-c-lite-green {
+    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+    background: linear-gradient(to right, #f8bd44, #f29263)
+}
+
+.user-profile {
+    padding: 20px 0
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.m-b-25 {
+    margin-bottom: 25px
+}
+
+.img-radius {
+    border-radius: 5px
+}
+
+h6 {
+    font-size: 14px
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+@media only screen and (min-width: 1400px) {
+    p {
+        font-size: 14px
+    }
+}
+
+.card-block {
+    padding: 1.25rem
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.card .card-block p {
+    line-height: 25px
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.text-muted {
+    color: #919aa3 !important
+}
+
+.b-b-default {
+    border-bottom: 1px solid #e0e0e0
+}
+
+.f-w-600 {
+    font-weight: 600
+}
+
+.m-b-20 {
+    margin-bottom: 20px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.p-b-5 {
+    padding-bottom: 5px !important
+}
+
+.m-b-10 {
+    margin-bottom: 10px
+}
+
+.m-t-40 {
+    margin-top: 20px
+}
+
+.user-card-full .social-link li {
+    display: inline-block
+}
+
+.user-card-full .social-link li a {
+    font-size: 20px;
+    margin: 0 10px 0 0;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out
+}
 </style>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<div id="iv" class="container" > 
+<div class="page-content page-container" id="page-content">
+    <div class="padding">
+        <div class="row container d-flex justify-content-center">
+            <div class="col-xl">
+                <div class="card user-card-full">
+                    <div class="row m-l-0 m-r-0">
+                        <div class="col-sm-4 bg-c-lite-green user-profile">
+                            <div class="card-block text-center text-white">
+                                <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
+                                <h6 class="f-w-600">'. $nom .'</h6>
+                                <p>fournisseur</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+                            </div>
+                        </div>
+                        <div class="col-sm-8">
+                            <div class="card-block">
+                                <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Information</h6>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Email</p>
+                                        <h6 class="text-muted f-w-400">'.$email.'</h6>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">Non d\'utilisateur</p>
+                                        <h6 class="text-muted f-w-400">'. $login  .'</h6>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">telephone</p>
+                                        ';
 
-  <div class="imgcontainer">
-    <img src="https://www.w3schools.com/howto/img_avatar2.png" alt="Avatar" class="avatar">
- </div>
- 
-  <div class="container1">
+                                         if ($nrows > 0) { 
+                                          for ($i = 0; $i < $nrows; $i++) { 
+                                            foreach ($results as $data) { 
+                                             $var .= '<h6 class="text-muted f-w-400">'.$data[$i].'</h6>' ;
+                                            }
+                                          }
+                                        }
 
-    <h6 class="title">Nom et Prenom : <b>'. $nom .' </b></h6>
-    <h6 class="title">Email : <b>'. $email .'</b></h6>
-    <h6 class="title">Non d\'utilisateur : <b>'. $login  .'</b></h6>
+                                   $var .= '         
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="m-b-10 f-w-600">code sntl</p>';
+                                        if ($nrows1 > 0) { 
+                                          for ($i = 0; $i < $nrows1; $i++) { 
+                                            foreach ($results1 as $data) { 
+                                             $var .= '<h6 class="text-muted f-w-400">'.$data[$i].'</h6>' ;
+                                            }
+                                          }
+                                        }
+                                          $var .= ' 
+                                       
+                                    </div>
+                                </div>
+                                <h6 class="m-b-20 m-t-40 p-b-5 b-b-default f-w-600"></h6>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                       <button  class="button button1" onclick="document.getElementById(\'id01\').style.display=\'block\'"> <i class="fas fa-user-edit"></i> Modifier mot de passe</button>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <button  class="button button2" id ="delete" > <i class="fas fa-trash"></i> Supprimer le compte</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-     <center> <button  class="button button1" onclick="document.getElementById(\'id01\').style.display=\'block\'"> <i class="fas fa-user-edit"></i> Modifier </button>  <button  class="button button2" id ="delete" > <i class="fas fa-trash"></i> Supprimer </button></center> 
-  </div>
-     </div>
+</div>
 
 <div id="id01" class="modal">
   
@@ -209,6 +395,7 @@ window.onclick = function(event) {
 </script>
    
   ';
+  return $var;
 }
 
 add_shortcode('dtmon_compte','dtmon_compte_shortcode');

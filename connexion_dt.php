@@ -86,7 +86,7 @@ input { box-shadow: 0 0 3px black; margin: 10px }
 <div class="row">
 <div class="col-5">
   <div class="imgcontainer">
-    <img src="https://sntl.twinsmaroc.com/ds/wp-content/uploads/sites/10/2021/08/Login-1536x1536.png" alt="Avatar" class="avatar">
+    <img src="https://img.freepik.com/vetores-gratis/ilustracao-do-conceito-de-minha-senha_114360-6924.jpg" alt="Avatar" class="avatar">
  </div>
  </div>
   <div class="col-7">
