@@ -91,10 +91,10 @@ input { box-shadow: 0 0 3px black; margin: 10px }
  </div>
   <div class="col-7">
   <div class="container1">
-      <center>  <input type="text" id ="login" name="login"  placeholder="nom d\'utilisateur *" style="margin-top: 7px"required><br></center>
-        <label class="login" id="label">Saisissez votre nom d\'utilisateur</label> 
-      <center>   <input type="password" id ="password" name="password" placeholder="mot de passe *"   style="margin-top: 7px" required></center>
-        <label class="password" id="label" >Entrez un mot de passe</label>
+      <center>  <input type="text" id ="loginconx" name="login"  placeholder="nom d\'utilisateur *" style="margin-top: 7px"required><br></center>
+        <label class="loginconx" id="label">Saisissez votre nom d\'utilisateur</label> 
+      <center>   <input type="password" id ="passwordconx" name="password" placeholder="mot de passe *"   style="margin-top: 7px" required></center>
+        <label class="passwordconx" id="label" >Entrez un mot de passe</label>
     </div>
         <center> <button  class="button button1" id ="conx"> se connecter </button><br>
     <div class="container1">
