@@ -141,7 +141,7 @@ border-radius: 4px 4px 4px 4px;
 .button2 {
    background-color: #dc3741;
   color: white;
-  border: 2px solid #c20c1d;
+  border: 2px solid #dc3741;
   
 }
 
@@ -190,7 +190,7 @@ body {
 
 .bg-c-lite-green {
     background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
-    background: linear-gradient(to right, #f8bd44, #f29263)
+    background: linear-gradient(to right, #064073, #064073)
 }
 
 .user-profile {
@@ -206,7 +206,13 @@ body {
 }
 
 .img-radius {
-    border-radius: 5px
+    margin: auto;
+    border: 4px solid white;
+    width : 100px;
+    border-radius: 500px;
+    height : 100px;
+    display : block;
+    background : url(https://www.svgrepo.com/show/70234/man.svg)
 }
 
 h6 {
@@ -300,8 +306,8 @@ h6 {
                     <div class="row m-l-0 m-r-0">
                         <div class="col-sm-4 bg-c-lite-green user-profile">
                             <div class="card-block text-center text-white">
-                                <div class="m-b-25"> <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image"> </div>
-                                <h6 class="f-w-600">'. $nom .'</h6>
+                                <div class="m-b-25"> <span class="img-radius" alt="User-Profile-Image"></span> </div>
+                               <p><b>'. $nom .'</b></p>
                                 <p>fournisseur</p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
                             </div>
                         </div>

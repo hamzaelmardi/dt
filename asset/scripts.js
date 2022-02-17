@@ -46,7 +46,7 @@ formValidation(fields)
                 }
             }else{
               Swal.fire({
-              icon: 'warning',
+              icon: 'error',
               text: json.message,
               timer: 3000
              })
@@ -138,7 +138,7 @@ formValidation(fields)
              }})
             }else{
               Swal.fire({
-              icon: 'error',
+              icon: 'warning',
               text: json.message,
               timer: 3000
              })
@@ -227,7 +227,7 @@ formValidation(fields)
              window.location.href = redirect
             }else{
             Swal.fire({
-              icon: 'error',
+              icon: 'warning',
               text: json.message,
               timer: 5000
              })
