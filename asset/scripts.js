@@ -41,8 +41,10 @@ formValidation(fields)
               window.location.href = redirect
                 }
                 else if(role.includes("client")){
-                    var redirect = window.location.origin+'/sntl/client' 
-              window.location.href = redirect
+                  Swal.fire({
+              icon: 'error',
+              text: 'Nom d\'utilisateur ou Mot de passe incorrect',
+             })
                 }
             }else{
               Swal.fire({
@@ -125,7 +127,9 @@ formValidation(fields)
             var json = JSON.parse(res);
               if(json.code1==200){
                 Swal.fire({
-              icon: 'success',
+              imageUrl: 'https://cdn.icon-icons.com/icons2/1506/PNG/512/emblemdefault_103756.png',
+           imageWidth: 100,
+          imageHeight: 100,
               text: json.message,
               allowOutsideClick : false,
              }).then((result) => {
@@ -217,7 +221,9 @@ formValidation(fields)
             var json = JSON.parse(result);
               if(json.code1==200){
                 Swal.fire({
-              icon: 'success',
+              imageUrl: 'https://cdn.icon-icons.com/icons2/1506/PNG/512/emblemdefault_103756.png',
+           imageWidth: 100,
+          imageHeight: 100,
               text: json.message,
              })
                 var redirect = window.location.origin+'/sntl/connexion-dt'
@@ -257,7 +263,9 @@ formValidation(fields)
               
               if(json.code1==200){
             Swal.fire({
-              icon: 'success',
+              imageUrl: 'https://cdn.icon-icons.com/icons2/1506/PNG/512/emblemdefault_103756.png',
+           imageWidth: 100,
+          imageHeight: 100,
               text: 'compte supprimée',
              
              })
@@ -319,7 +327,9 @@ formValidation(fields)
             var json = JSON.parse(res);
               if(json.code1==200){
                 Swal.fire({
-              icon: 'success',
+              imageUrl: 'https://cdn.icon-icons.com/icons2/1506/PNG/512/emblemdefault_103756.png',
+           imageWidth: 100,
+          imageHeight: 100,
               text: json.message,
         
              })

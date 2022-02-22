@@ -106,7 +106,6 @@
             } );
 
             var table = $("#example").DataTable( {
-              scrollX: true,
             "paging":         true,
                 "pageLength":5,
                 "scrollX": true,

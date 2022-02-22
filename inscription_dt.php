@@ -108,10 +108,9 @@ border-radius: 4px 4px 4px 4px;
         <input type="text"  id ="password" name="password" placeholder="Mot de passe*" required>
         <label class="password" id="label">Saisissez votre Mot de passe</label> 
 </div>
+
 </div>
-<div class="container" >
-        <center> <button class="button button1" id ="inscription" > Inscription </button> </center>
-      </div>
+ <center> <button class="button button1" id ="inscription" > Inscription </button> </center>
       </div>
      
        <div name="Personnemoral" id="Personnemoral" style="display:none">
@@ -123,17 +122,17 @@ border-radius: 4px 4px 4px 4px;
         <label class="registre" id="label" >Saisissez votre Registre de commerce Mail </label> 
         <input type="text"  id ="emailm" name="emailm" placeholder=" Email*: exemple@exemple.com" required >
         <label class="emailm" id="label">Saisissez votre adresse email</label>
-        <input type="tel" id ="tel1" name="tel1" placeholder="Téléphone" />
+        <input type="tel" id ="tel1" name="tel1" placeholder="Téléphone*" />
         <label class="tel1" id="label" >Saisissez votre numero de téléphone </label>
         <input type="text"  id ="login1" name="login1" placeholder="Nom d\'utilisateur*" required>
         <label class="login1" id="label" >Saisissez votre Nom d\'utilisateur </label>
         <input type="text"  id ="password1" name="password1" placeholder="Mot de passe*" required>
         <label class="password1" id="label" >Saisissez votre Mot de passe </label>
-        <center>
-        <div class="container" >
-         <button class="button button1" id ="inscription1" > Inscription </button> 
-        <div>
-        </center>
+       
+        
+        <center>  <button class="button button1" id ="inscription1" > Inscription </button>  </center>
+        
+       
       </div>
       </div>
       </body>

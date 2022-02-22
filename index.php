@@ -174,6 +174,8 @@ Cordialement,</p>
 }
 else if($user){
 echo json_encode(array('code1'=>405 ,'message'=>'Ce nom d\'utilisateur existe déjà'));
+}else if($user_m){
+    echo json_encode(array('code1'=>404 ,'message'=>'Email exists deja'));
 }
 else if(!in_array($code,$extract['CODE'])){
 echo json_encode(array('code1'=>406 ,'message'=>' Ce code fournniseur n’existe pas, veuillez vérifier votre code fournniseur ou contacter la SNTL'));
@@ -282,6 +284,8 @@ echo json_encode(array('code1'=>406 ,'message'=>' Ce code fournniseur n’existe
 }
 else if($user){
 echo json_encode(array('code1'=>405 ,'message'=>'Ce nom d\'utilisateur existe déjà'));
+}else if($user_m){
+    echo json_encode(array('code1'=>404 ,'message'=>'Email exists deja'));
 }
 else {
 echo json_encode(array('code1'=>404 ,'message'=>'Vos informations ne correspondent pas aux informations saisies sur le système de gestion, veuillez contacter la SNTL'));
