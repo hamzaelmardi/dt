@@ -40,9 +40,10 @@
           <head>
             <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.css">
             <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-            <link href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+            <link href="https://cdn.datatables.net/1.11.4/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
             <link href="https://cdn.datatables.net/datetime/1.1.1/css/dataTables.dateTime.min.css" rel="stylesheet" type="text/css" />
             <style>
+
             .dataTables_wrapper .dataTables_filter input {
             border: 1px solid #aaa;
             border-radius: 3px;
@@ -57,6 +58,9 @@
         input {
         border: 1px solid #555;
         }
+        #ii{
+        background-color : #dfa23f;
+    }
         .button {
           border: none;
           color: white;
@@ -72,6 +76,7 @@
         </style>
           <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
           <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+          <script src="https://cdn.datatables.net/1.11.4/js/jquery.dataTables.min.js"></script>
           <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
           <script src="https://cdn.datatables.net/datetime/1.1.1/js/dataTables.dateTime.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
@@ -101,7 +106,10 @@
             } );
 
             var table = $("#example").DataTable( {
+              scrollX: true,
+            "paging":         true,
                 "pageLength":5,
+                "scrollX": true,
                 orderCellsTop: true,
                 fixedHeader: true,
                 "language": {
@@ -144,10 +152,10 @@
 
         <body>
  <h1>Espace Fournisseur</h1> </br>
-        <table id="example" class="display" style="width:100%">
+        <table id="example" class="table table-hover table-bordered table-striped" style="width:100%">
             <thead >
             
-                <tr >
+                <tr id="ii">
                     <th>Date facture</th>
                     <th>Date règlement</th>
                     <th>Réf règlement</th>

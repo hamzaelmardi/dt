@@ -189,7 +189,6 @@ body {
 }
 
 .bg-c-lite-green {
-    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
     background: linear-gradient(to right, #064073, #064073)
 }
 
@@ -326,7 +325,7 @@ h6 {
                                 </div>
                                 <div class="row">
                                     <div class="col-sm-6">
-                                        <p class="m-b-10 f-w-600">telephone</p>
+                                        <p class="m-b-10 f-w-600">Téléphone</p>
                                         ';
 
                                          if ($nrows > 0) { 
@@ -340,7 +339,7 @@ h6 {
                                    $var .= '         
                                     </div>
                                     <div class="col-sm-6">
-                                        <p class="m-b-10 f-w-600">code sntl</p>';
+                                        <p class="m-b-10 f-w-600">Code SNTL</p>';
                                         if ($nrows1 > 0) { 
                                           for ($i = 0; $i < $nrows1; $i++) { 
                                             foreach ($results1 as $data) { 

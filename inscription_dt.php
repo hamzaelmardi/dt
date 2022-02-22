@@ -19,7 +19,7 @@ function dt_inscription_shortcode() {
   padding: 30px;
 }
 
-select {background: #30404b;color:white }
+select {background: #064073;color:white }
 input,span { box-shadow: 0 0 2px grey; margin: 10px }
   input[type=text], select, input[type=tel] {
   width: 100%;
@@ -72,65 +72,66 @@ border-radius: 4px 4px 4px 4px;
      <h1>Inscription Fournniseur </h1> 
   </div>
  </center>
-  <div id="iv" class="container" > 
+  <div id="iv" class="container" >
+  <label><b>Vous êtes?</b></label> 
    <select  id="source" >
-   <option value="" selected disabled>select</option>
+   <option value="" selected disabled>Choisir</option>
    <option value="Personnephysique">Personne physique</option>
   <option value="Personnemoral">Personne morale</option>
 </select >
  <div id="iv1">
      <div name="Personnephysique" id="Personnephysique" style="display:none">
 <div class="row">
-<div class="col-6">
-        <input type="text" id ="nom" name="nom" placeholder="nom" required>
+<div class="col-lg">
+        <input type="text" id ="nom" name="nom" placeholder="Nom*" required>
         <label class="nom" id="label" >Saisissez votre nom </label> 
-        <input type="text" id ="prenom" name="prenom" placeholder="prenom" required>
+        <input type="text" id ="prenom" name="prenom" placeholder="Prénom*" required>
         <label class="prenom" id="label">Saisissez votre prenom </label> 
 </div>
-<div class="col-6">
-        <input type="text" id ="cin" name="cin" placeholder="cin" required>
+<div class="col-lg">
+        <input type="text" id ="cin" name="cin" placeholder="CIN*" required>
         <label class="cin" id="label">Saisissez votre cin </label> 
-        <input type="text"  id ="code" name="code" placeholder="code fournisseur SNTL" required>
+        <input type="text"  id ="code" name="code" placeholder=" Code fournisseur SNTL*" required>
         <label  class="code" id="label">Saisissez votre code fournisseur sntl </label> 
 </div>
 </div>
 <div class="row">
-<div class="col-6">
-             <input type="text"  id ="email" name="email" placeholder="adresse email"  >
+<div class="col-lg">
+             <input type="text"  id ="email" name="email" placeholder=" Email*: exemple@exemple.com"  >
              <label class="email" id="label">Saisissez votre adresse email</label>
-             <input type="tel" id ="tel" name="tel" placeholder="telephone" />
-             <label class="tel" id="label">Saisissez votre numero de telephone</label>
+             <input type="tel" id ="tel" name="tel" placeholder="Téléphone*" />
+             <label class="tel" id="label">Saisissez votre numero de téléphone</label>
 </div>
-<div class="col-6">
-        <input type="text"  id ="login" name="login" placeholder="login" required>
-        <label  class="login" id="label">Saisissez votre login</label> 
-        <input type="text"  id ="password" name="password" placeholder="password" required>
-        <label class="password" id="label">Saisissez votre password</label> 
+<div class="col-lg">
+        <input type="text"  id ="login" name="login" placeholder="Nom d\'utilisateur*" required>
+        <label  class="login" id="label">Saisissez votre Nom d\'utilisateur</label> 
+        <input type="text"  id ="password" name="password" placeholder="Mot de passe*" required>
+        <label class="password" id="label">Saisissez votre Mot de passe</label> 
 </div>
 </div>
 <div class="container" >
-        <center> <button class="button button1" id ="inscription" > inscription </button> </center>
+        <center> <button class="button button1" id ="inscription" > Inscription </button> </center>
       </div>
       </div>
      
        <div name="Personnemoral" id="Personnemoral" style="display:none">
-        <input type="text"  id ="raison" name="raison" placeholder="Raison sociale" required>
+        <input type="text"  id ="raison" name="raison" placeholder="Raison sociale*" required>
          <label class="raison" id="label" >Saisissez votre raison social </label> 
-        <input type="text"  id ="code1" name="code1" placeholder="Code fournisseur SNTL" required>
+        <input type="text"  id ="code1" name="code1" placeholder="Code fournisseur SNTL*" required>
          <label class="code1" id="label" >Saisissez votre code fournisseur sntl </label> 
-        <input type="text"  id ="registre" name="registre" placeholder="Registre de commerce Mail" required>
+        <input type="text"  id ="registre" name="registre" placeholder="Registre de commerce mail*" required>
         <label class="registre" id="label" >Saisissez votre Registre de commerce Mail </label> 
-        <input type="text"  id ="emailm" name="emailm" placeholder="Adresse email" required >
+        <input type="text"  id ="emailm" name="emailm" placeholder=" Email*: exemple@exemple.com" required >
         <label class="emailm" id="label">Saisissez votre adresse email</label>
-        <input type="tel" id ="tel1" name="tel1" placeholder="Telephone" />
-        <label class="tel1" id="label" >Saisissez votre numero de telephone </label>
-        <input type="text"  id ="login1" name="login1" placeholder="Login" required>
-        <label class="login1" id="label" >Saisissez votre login </label>
-        <input type="text"  id ="password1" name="password1" placeholder="Password" required>
-        <label class="password1" id="label" >Saisissez votre password </label>
+        <input type="tel" id ="tel1" name="tel1" placeholder="Téléphone" />
+        <label class="tel1" id="label" >Saisissez votre numero de téléphone </label>
+        <input type="text"  id ="login1" name="login1" placeholder="Nom d\'utilisateur*" required>
+        <label class="login1" id="label" >Saisissez votre Nom d\'utilisateur </label>
+        <input type="text"  id ="password1" name="password1" placeholder="Mot de passe*" required>
+        <label class="password1" id="label" >Saisissez votre Mot de passe </label>
         <center>
         <div class="container" >
-         <button class="button button1" id ="inscription1" > inscription </button> 
+         <button class="button button1" id ="inscription1" > Inscription </button> 
         <div>
         </center>
       </div>

@@ -82,21 +82,21 @@ input { box-shadow: 0 0 3px black; margin: 10px }
 </style>
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-<div id="iv" class="container" > 
+<div id="iv" class="container"> 
 <div class="row">
-<div class="col-5">
+<div class="col-lg">
   <div class="imgcontainer">
     <img src="https://img.freepik.com/vetores-gratis/ilustracao-do-conceito-de-minha-senha_114360-6924.jpg" alt="Avatar" class="avatar">
  </div>
  </div>
-  <div class="col-7">
+  <div class="col-lg">
   <div class="container1">
-      <center>  <input type="text" id ="loginconx" name="login"  placeholder="nom d\'utilisateur *" style="margin-top: 7px"required><br></center>
+      <center>  <input type="text" id ="loginconx" name="login"  placeholder="Nom d\'utilisateur*" style="margin-top: 7px"required><br></center>
         <label class="loginconx" id="label">Saisissez votre nom d\'utilisateur</label> 
-      <center>   <input type="password" id ="passwordconx" name="password" placeholder="mot de passe *"   style="margin-top: 7px" required></center>
+      <center>   <input type="password" id ="passwordconx" name="password" placeholder="Mot de passe*"   style="margin-top: 7px" required></center>
         <label class="passwordconx" id="label" >Entrez un mot de passe</label>
     </div>
-        <center> <button  class="button button1" id ="conx"> se connecter </button><br>
+        <center> <button  class="button button1" id ="conx"> Se connecter </button><br>
     <div class="container1">
     <a id="myHeader" href="/sntl/inscription-dt" target="_blank">Créer votre compte fournisseur </a> 
   

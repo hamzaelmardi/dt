@@ -69,7 +69,7 @@ $vqr= array(
  
 } else {
 
-echo json_encode(array('code1'=>404,'message'=>'login ou password incorrect'));
+echo json_encode(array('code1'=>404,'message'=>'Nom d\'utilisateur ou Mot de passe incorrect'));
 
 }
     wp_die();
@@ -111,10 +111,10 @@ if(isset ($_POST['nom'] , $_POST['code'], $_POST['prenom'], $_POST['cin'], $_POS
     $stmt = oci_parse($conn, $requete1);
      oci_execute($stmt);
      oci_fetch_all($stmt,$extract);
-if(in_array($nom,$extract['NOM']) and in_array($code,$extract['CODE']) and in_array($prenom,$extract['PRENOM']) and 
+if(in_array($nom,$extract['NOM'])  and in_array($prenom,$extract['PRENOM']) and 
    in_array($cin,$extract['CIN']) and  in_array($email,$extract['EMAIL']) and  in_array($tel,$extract['TEL'])
     && !$user_m &&  !$user){ 
-     echo json_encode(array('code1'=>200 ,'message'=>'le compte est créé et activé')); 
+     echo json_encode(array('code1'=>200 ,'message'=>'Informations correctes, votre compte est actif.')); 
        $userdata = array(
         'user_login' => $login,
         'first_name' => $prenom,
@@ -126,7 +126,7 @@ if(in_array($nom,$extract['NOM']) and in_array($code,$extract['CODE']) and in_ar
 
 $user_id = wp_insert_user( $userdata ) ;
 $to = $email;
-  $subject  = "sntl";
+  $subject  = "SNTL- Inscription réussie";
   $body = $body = '<head>
   <style type="text/css">
     @media (min-width: 650px) {
@@ -156,22 +156,30 @@ $to = $email;
             <img src="https://www.leconomiste.com/sites/default/files/eco7/public/snlt-037.jpg" width="200px">
  </div>
  <br>
-           <p>Bonjour ,<br>votre compte est active.<br>
-            nom d\'utilisateur : <b style="color: #2c3b98";>'.$login.'</b><br>
-            mot de pass  : <b style="color: #2c3b98";>'.$password.'</b></p>
+          <p>Bonjour Mme/M <b>'.$nom.'</b>,<p>
+Nous vous informons que votre compte fournisseur a été activé.
+Ci-dessous vos informations de connexion:<br>
+
+  - Nom d\'utilisateur: <b>'.$login.'</b><br>
+  - Mot de passe: <b>'.$password.'</b><br>
+ 
+
+Cordialement,</p>
     </div>
 
   </body>';
-  $headers = "From: hamzatwins10@gmail.com";
   $headers = 'Content-type: text/html; charset=utf-8';
   mail($to, $subject , $body, $headers);
 
 }
 else if($user){
-echo json_encode(array('code1'=>405 ,'message'=>'nom d\'utilisateur exists deja'));
+echo json_encode(array('code1'=>405 ,'message'=>'Ce nom d\'utilisateur existe déjà'));
+}
+else if(!in_array($code,$extract['CODE'])){
+echo json_encode(array('code1'=>406 ,'message'=>' Ce code fournniseur n’existe pas, veuillez vérifier votre code fournniseur ou contacter la SNTL'));
 }
 else {
-echo json_encode(array('code1'=>404 ,'message'=>'informations saisies ne correspondent pas aux informations saisies sur le système de gestion, veuillez contacter la SNTL'));
+echo json_encode(array('code1'=>404 ,'message'=>'Vos informations ne correspondent pas aux informations saisies sur le système de gestion, veuillez contacter la SNTL'));
 }}
     wp_die();
 }
@@ -210,10 +218,10 @@ $user_m = get_user_by('email', $emailm);
     $stmt = oci_parse($conn, $requete1);
      oci_execute($stmt);
      oci_fetch_all($stmt,$extract) ;
-if(in_array($raison,$extract['RAISON']) and in_array($registre,$extract['REGISTRE']) and in_array($code1,$extract['CODE'])  
+if(in_array($raison,$extract['RAISON']) and in_array($registre,$extract['REGISTRE'])   
     and in_array($tel1,$extract['TEL']) and in_array($emailm,$extract['EMAIL']) && !$user_m &&  !$user){
     
-     echo json_encode(array('code1'=>200 ,'message'=>'le compte est créé et activé')); 
+     echo json_encode(array('code1'=>200 ,'message'=>'Informations correctes, votre compte est actif.')); 
        $userdata = array(
         'user_login' => $login1,
         'first_name' => $raison,
@@ -224,7 +232,7 @@ if(in_array($raison,$extract['RAISON']) and in_array($registre,$extract['REGISTR
 
 $user_id = wp_insert_user( $userdata ) ;
 $to = $emailm;
-  $subject  = "sntl";
+  $subject  = "SNTL- Inscription réussie";
   $body = $body = '<head>
   <style type="text/css">
     @media (min-width: 650px) {
@@ -254,21 +262,29 @@ $to = $emailm;
             <img src="https://www.leconomiste.com/sites/default/files/eco7/public/snlt-037.jpg" width="200px">
  </div>
  <br>
-           <p>Bonjour ,<br>votre compte est active.<br>
-            nom d\'utilisateur : <b style="color: #2c3b98";>'.$login1.'</b><br>
-            mot de pass  : <b style="color: #2c3b98";>'.$password.'</b></p>
+           <p>Bonjour <b>'.$raison.'</b>,<p>
+Nous vous informons que votre compte fournisseur a été activé.
+Ci-dessous vos informations de connexion:<br>
+
+  - Nom d\'utilisateur: <b>'.$login1.'</b><br>
+  - Mot de passe: <b>'.$password.'</b><br>
+ 
+
+Cordialement,</p>
     </div>
 
   </body>';
-  $headers = "From: hamzatwins10@gmail.com";
   $headers = 'Content-type: text/html; charset=utf-8';
   mail($to, $subject , $body, $headers);
 }
+else if(!in_array($code1,$extract['CODE'])){
+echo json_encode(array('code1'=>406 ,'message'=>' Ce code fournniseur n’existe pas, veuillez vérifier votre code fournniseur ou contacter la SNTL'));
+}
 else if($user){
-echo json_encode(array('code1'=>405 ,'message'=>'nom d\'utilisateur exists deja'));
+echo json_encode(array('code1'=>405 ,'message'=>'Ce nom d\'utilisateur existe déjà'));
 }
 else {
-echo json_encode(array('code1'=>404 ,'message'=>'informations saisies ne correspondent pas aux informations saisies sur le système de gestion, veuillez contacter la SNTL'));
+echo json_encode(array('code1'=>404 ,'message'=>'Vos informations ne correspondent pas aux informations saisies sur le système de gestion, veuillez contacter la SNTL'));
 }}
     wp_die();
 }
