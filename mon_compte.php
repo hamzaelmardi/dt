@@ -385,7 +385,7 @@ h6 {
       <input id ="newpassword" name="newpassword" type="password" placeholder="Enter votre nouveau mot de passe" name="psw" >
       <label class="newpassword" id="label" >Entrez un mot de passe</label>
       <center>  
-      <button class="button button1" id ="update">modifier</button>
+      <button class="button button1" id ="update">Modifier</button>
       
     </div>
      

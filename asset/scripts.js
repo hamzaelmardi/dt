@@ -30,7 +30,9 @@ formValidation(fields)
           url: ajaxurl,
           type: "POST",
           data: {'action': 'load_comments1','login': login,'pass': pass},
+          
           success:function(result){
+           
             var json = JSON.parse(result);
               if(json.code1==200){
 
@@ -123,11 +125,17 @@ formValidation(fields)
           url: ajaxurl,
           type: "POST",
           data: {'action': 'insert_fourn1','nom': nom,'code': code,'login': login,'password': password,'email': email,'prenom': prenom,'cin': cin,'tel': tel},
+          beforeSend: function() {
+        $('.loading-form').css('display', 'block');
+         jQuery('.inscription-dt').css('pointer-events','none')
+        },
           success:function(res){
+            $('.loading-form').css('display', 'none');
+             jQuery('.inscription-dt').css('pointer-events','auto')
             var json = JSON.parse(res);
               if(json.code1==200){
                 Swal.fire({
-              imageUrl: 'https://cdn.icon-icons.com/icons2/1506/PNG/512/emblemdefault_103756.png',
+              imageUrl: 'https://www.freeiconspng.com/uploads/ok-icon-success-19.png',
            imageWidth: 100,
           imageHeight: 100,
               text: json.message,
@@ -217,11 +225,18 @@ formValidation(fields)
           url: ajaxurl,
           type: "POST",
           data: {'action': 'insert_morale1','raison': raison,'code1': code1,'login1': login1,'password': password,'registre': registre,'tel1': tel1,'emailm': emailm},
+          beforeSend: function() {
+        $('.loading-form').css('display', 'block');
+        jQuery('.inscription-dt').css('pointer-events','none')
+        },
           success:function(result){
+             $('.loading-form').css('display', 'none');
+             jQuery('.inscription-dt').css('pointer-events','auto')
+
             var json = JSON.parse(result);
               if(json.code1==200){
                 Swal.fire({
-              imageUrl: 'https://cdn.icon-icons.com/icons2/1506/PNG/512/emblemdefault_103756.png',
+              imageUrl: 'https://www.freeiconspng.com/uploads/ok-icon-success-19.png',
            imageWidth: 100,
           imageHeight: 100,
               text: json.message,
@@ -263,10 +278,10 @@ formValidation(fields)
               
               if(json.code1==200){
             Swal.fire({
-              imageUrl: 'https://cdn.icon-icons.com/icons2/1506/PNG/512/emblemdefault_103756.png',
+              imageUrl: 'https://www.freeiconspng.com/uploads/ok-icon-success-19.png',
            imageWidth: 100,
           imageHeight: 100,
-              text: 'compte supprimée',
+              text: 'Votre compte a été supprimé',
              
              })
             var redirect = window.location.origin+'/sntl/connexion-dt'
@@ -327,7 +342,7 @@ formValidation(fields)
             var json = JSON.parse(res);
               if(json.code1==200){
                 Swal.fire({
-              imageUrl: 'https://cdn.icon-icons.com/icons2/1506/PNG/512/emblemdefault_103756.png',
+              imageUrl: 'https://www.freeiconspng.com/uploads/ok-icon-success-19.png',
            imageWidth: 100,
           imageHeight: 100,
               text: json.message,

@@ -1,12 +1,24 @@
 <?php
 function dt_inscription_shortcode() {
  return $var = '
- <html >
+
  <head>
  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.1/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
  </head>
  <style>
+  .loading-form{
+    top: 38%;
+    position: absolute;
+    left: 45%;
+    width: 10%;
+   display:none;
+}
+.loading-form img{
+    height:100%;
+   width:100%;
+  
+}
  .fa{
     margin-left: 5px;
 }
@@ -66,12 +78,13 @@ border-radius: 4px 4px 4px 4px;
     width:85% 
 }
 </style>
-<body>
+
 <center>
 <div >
      <h1>Inscription Fournniseur </h1> 
   </div>
  </center>
+ <div class="inscription-dt">
   <div id="iv" class="container" >
   <label><b>Vous êtes?</b></label> 
    <select  id="source" >
@@ -110,7 +123,10 @@ border-radius: 4px 4px 4px 4px;
 </div>
 
 </div>
- <center> <button class="button button1" id ="inscription" > Inscription </button> </center>
+ <center> <button class="button button1" id ="inscription" > Inscription </button> 
+ <div class="loading-form"><img src="https://c.tenor.com/5o2p0tH5LFQAAAAi/hug.gif"></div>
+ </center>
+
       </div>
      
        <div name="Personnemoral" id="Personnemoral" style="display:none">
@@ -129,15 +145,16 @@ border-radius: 4px 4px 4px 4px;
         <input type="text"  id ="password1" name="password1" placeholder="Mot de passe*" required>
         <label class="password1" id="label" >Saisissez votre Mot de passe </label>
        
-        
-        <center>  <button class="button button1" id ="inscription1" > Inscription </button>  </center>
+        <center>
+        <button class="button button1" id ="inscription1" > Inscription </button>  
+        <div class="loading-form"><img src="https://c.tenor.com/5o2p0tH5LFQAAAAi/hug.gif"></div>
+        </center>
+
         
        
       </div>
       </div>
-      </body>
-      </html>
-      
+
 <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
